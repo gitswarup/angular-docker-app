@@ -96,6 +96,15 @@ sudo docker run --publish 80:80 --detach --name ada-prod arupsarkardocker/angula
 
 19. add project to Git
 git init
+git remote add origin <url to git repo>
+add ssh key to talk to github
+ssh-keygen -t rsa -b 4096 -C "swarupsarkar187@gmail.com"
+save to default location - /home/swarup/.ssh/id_rsa - private key, public key as id_rsa.pub
+passpharse - given
+add new SSH key to the ssh-agent to manage your keys
+Start the ssh-agent in the background - eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa - add the ssh key to the agent
+add the ssh key (public key stored in id_rsa.pub) to the github account
 
 20. link github with dockerhub
 
