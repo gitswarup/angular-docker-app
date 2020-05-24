@@ -120,6 +120,8 @@ restart container
 21. push new changes to github
 changed html label
 push changes to github
+auto build pickup failed - maybe dockerhub infra issue?
+push change again
 wait for dockerhub to finish auto build with new image
 
 22. verify docker image update in dockerhub
