@@ -110,22 +110,23 @@ git push -u origin master
 first time connection can't be established as it's known part of known hosts. hence, provide the fingerprint to confirmaton. this will authenticate with github add add the repo to the known hosts and push the code
 
 
-20. link github with dockerhub
+20. link github with dockerhub - done
 linking github with dockerhub auto build runs on dockerhub infrastructure. The same can be achieved vice-versa. Using github packaging. Via github packaging, git build will create push the docker image to dockerhub. But that needs more config setup. But it might be more cheaper as github infra will be much cheaper than dockerhub infra. For now, both are same and free.
 triggered build
 build was successful
 pull latest
 restart container
 
-21. push new changes to github
+21. push new changes to github - done
 changed html label
 push changes to github
 auto build pickup failed - maybe dockerhub infra issue?
 push change again
-wait for dockerhub to finish auto build with new image
+worked this time
 
 22. verify docker image update in dockerhub
-
-23. pull latest image from dockerhub
-
-24. verify latest image
+sudo docker pull arupsarkardocker/angular-docker-app
+sudo docker restart ada-prod - restart didn't take the updated image
+sudo docker stop ada-prod
+sudo docker container prune
+sudo docker run --publish 80:80 --detach --name ada-prod arupsarkardocker/angular-docker-app:latest
