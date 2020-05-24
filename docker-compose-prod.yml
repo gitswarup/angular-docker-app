@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+
+  prod:
+    container_name: ada-prod
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    image: arupsarkardocker/angular-docker-app
+    ports:
+      - '80:80'
+
